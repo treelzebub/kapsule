@@ -11,3 +11,7 @@ import android.os.Bundle
 inline fun <reified T : Activity> Activity.createIntent(b: Bundle = Bundle.EMPTY): Intent {
     return Intent(this, T::class.java).apply { putExtras(b) }
 }
+
+inline fun <reified T : Activity> Activity.startActivityWithExtras(b: Bundle = Bundle.EMPTY) {
+    startActivity(createIntent<T>(b))
+}
