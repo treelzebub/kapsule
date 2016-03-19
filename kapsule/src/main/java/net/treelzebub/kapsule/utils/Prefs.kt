@@ -35,7 +35,8 @@ object KPrefs {
                 }
             }
             else -> {
-                throw IllegalArgumentException("$TAG: SharedPreferences only stores the following types: Boolean, String, Int, Float, Long, Set<String>.")
+                throw IllegalArgumentException("$TAG: SharedPreferences only stores the following types: " +
+                        "Boolean, String, Int, Float, Long, Set<String>.")
             }
         }
         return if (commit) {
