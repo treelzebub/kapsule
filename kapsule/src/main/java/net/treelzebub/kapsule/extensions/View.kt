@@ -12,8 +12,8 @@ import android.view.ViewTreeObserver
 
 val View.inflater: LayoutInflater get() = LayoutInflater.from(this.context)
 
-fun ViewGroup.inflate(@LayoutRes resId: Int, attachToRoot: Boolean = false) {
-    inflater.inflate(resId, this, attachToRoot)
+fun ViewGroup.inflate(@LayoutRes resId: Int, root: ViewGroup = this, attachToRoot: Boolean = false): View {
+    return inflater.inflate(resId, root, attachToRoot)
 }
 
 fun View.setVisible() {
