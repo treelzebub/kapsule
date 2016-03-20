@@ -47,8 +47,8 @@ object KPrefs {
         }
     }
 
-    inline fun <reified T : Any> get(prefs: SharedPreferences, key: String): T {
-        val retval = prefs.all[key] ?: throw InvalidPrefKeyException("$TAG: $key not found in SharedPreferences.")
+    inline fun <reified T : Any> get(prefs: SharedPreferences, key: String, default: T): T {
+        val retval = prefs.all[key] ?: return default
         if (retval is T) {
             return retval
         } else {
@@ -56,7 +56,5 @@ object KPrefs {
         }
 
     }
-
-    class InvalidPrefKeyException(msg: String) : Throwable(msg)
 }
 
