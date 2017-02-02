@@ -1,4 +1,4 @@
-# kapsule
+# knapsack
 
 A small Kotlin library of convenience code for Android Developers.
 

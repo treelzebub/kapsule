@@ -1,1 +1,1 @@
-include ':app', ':kapsule'
+include ':app', ':library'
